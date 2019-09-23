@@ -49,9 +49,19 @@ class MyGame(arcade.Window):
         self.animal_sprite.center_x = 300
         self.animal_sprite.center_y = 300
         self.animal_list.append(self.animal_sprite)
+
+        self.animal_sprite = arcade.Sprite("assets/dog.png", 0.5)
+        self.animal_sprite.center_x = 450
+        self.animal_sprite.center_y = 300
+        self.animal_list.append(self.animal_sprite)
         
         self.emote_sprite = Emote()
         self.emote_sprite.center_x = 300
+        self.emote_sprite.center_y = 360
+        self.emote_list.append(self.emote_sprite)
+
+        self.emote_sprite = Emote()
+        self.emote_sprite.center_x = 450
         self.emote_sprite.center_y = 360
         self.emote_list.append(self.emote_sprite)
         
