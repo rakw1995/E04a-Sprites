@@ -16,13 +16,24 @@ class MyGame(arcade.Window):
         file_path = os.path.dirname(os.path.abspath(__file__))
         os.chdir(file_path)
         arcade.set_background_color(open_color.white)
+        self.animal_list = arcade.SpriteList()
 
 
     def setup(self):
-        pass        
+    
+        animals = ['boo','broom','cauldron','crystal','eye','ghost','grave','pumpkin','skull','witch']
+        for i in range(20):
+            animal = random.choice(animals)
+            x = random.randint(0,800)
+            y = random.randint(0,600)
+            self.animal_sprite = arcade.Sprite("assets/{animal}.png".format(animal=animal), 0.5)
+            self.animal_sprite.center_x = x
+            self.animal_sprite.center_y = y
+            self.animal_list.append(self.animal_sprite)     
 
     def on_draw(self):
         arcade.start_render()
+        self.animal_list.draw()
         pass
 
 
